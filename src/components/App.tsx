@@ -1,5 +1,5 @@
-import logo from "./assets/logo.svg";
-import "./css/App.css";
+import logo from "../assets/logo.svg";
+import "../css/App.css";
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 
