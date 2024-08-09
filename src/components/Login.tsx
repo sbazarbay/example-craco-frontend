@@ -3,6 +3,7 @@ import { AuthContext } from "./AuthContext";
 import { Form } from "react-router-dom";
 import "../css/Login.css";
 
+// For demo purposes (to show simple "JWT" based auth), will use Login component for both Login/Signup functionality, instead of creating another component for Signup
 function Login() {
   const authContext = useContext(AuthContext);
   return (
