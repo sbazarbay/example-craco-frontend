@@ -2,7 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The repo focuses on showing a simple example of React app that uses craco (to allow extensive configuration of the app without ejecting it). Also uses Prettier & ESLint for formatting handling; React Router for routing.
+The repo focuses on showing a simple example of React app that uses craco (allows extensive configuration of the app without ejecting it). Also uses:
+- Prettier & ESLint for formatting & syntax error handling;
+- React Router for routing
+- Localforage, Sort-by, Match-sorter, Faker for Backend API simulation
 
 ## Available Scripts
 
