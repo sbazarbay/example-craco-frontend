@@ -1,29 +1,17 @@
-import { useContext } from "react";
-import "../css/User.css";
-import { AuthContext } from "./AuthContext";
+import { Link } from "react-router-dom";
+import Layout from "./Layout";
 
 export default function User() {
-  const authContext = useContext(AuthContext);
-
   // TODO: fetch user data using localforage
 
-  if (authContext.length === 0) {
-    // TODO: redirect to login
-    console.error("wait u shouldnt be here");
-  }
-
   return (
-    <div className="user">
-      <section>
-        <h1>User info</h1>
-
-        <p>Username: </p>
-        <p>Email: </p>
-        <p>Phone: </p>
-        <p>Address: </p>
-      </section>
-      {/* TODO: add logout functionality */}
-      <button>Logout</button>
-    </div>
+    <Layout>
+      <h1>User info</h1>
+      <Link to="/">Go to home</Link>
+      <p>Username: </p>
+      <p>Email: </p>
+      <p>Phone: </p>
+      <p>Address: </p>
+    </Layout>
   );
 }

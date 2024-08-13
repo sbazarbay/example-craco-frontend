@@ -3,18 +3,32 @@ import ReactDOM from "react-dom/client";
 import Login from "./components/Login";
 import reportWebVitals from "./utils/reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AuthContext } from "./components/AuthContext";
 import User from "./components/User";
+import AuthProvider from "./components/AuthProvider";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/user",
-    element: <User />
-  }
+    element: (
+      <ProtectedRoute>
+        <User />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -22,9 +36,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AuthContext.Provider value={""}>
+    <AuthProvider isSignedIn={false}>
       <RouterProvider router={router} />
-    </AuthContext.Provider>
+    </AuthProvider>
   </React.StrictMode>,
 );
 
