@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Login from "./components/Login";
+import Login, { action as loginAction } from "./components/Login";
 import reportWebVitals from "./utils/reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import User from "./components/User";
@@ -28,6 +28,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    action: loginAction,
   },
 ]);
 
