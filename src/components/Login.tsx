@@ -25,7 +25,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // TODO: backend.com/api/auth/check HttpOnly -> JWT
+    // TODO: backend.com/api/auth/check HttpOnly -> JWT, to persist auth session between page refreshes (works with real backend only though)
     if (actionData !== undefined && actionData.user !== null) {
       setUser({ id: actionData.user.id! });
       navigate("/", { replace: true });
