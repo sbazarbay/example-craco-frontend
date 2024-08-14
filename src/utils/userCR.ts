@@ -4,13 +4,13 @@ import { matchSorter } from "match-sorter";
 import { sortBy } from "sort-by-typescript";
 
 export type User = {
-  id: string;
-  username: string;
-  email: string;
-  password: string;
-  phone: string;
-  address: string;
-  createdAt: number;
+  id?: string;
+  username?: string;
+  email?: string;
+  password?: string;
+  phone?: string;
+  address?: string;
+  createdAt?: number;
 };
 
 // CREATE

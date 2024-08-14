@@ -27,7 +27,7 @@ export default function Login() {
   useEffect(() => {
     // TODO: backend.com/api/auth/check HttpOnly -> JWT
     if (actionData !== undefined && actionData.user !== null) {
-      setUser({ id: actionData.user.id });
+      setUser({ id: actionData.user.id! });
       navigate("/", { replace: true });
     }
   }, [actionData]);
