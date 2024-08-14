@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import { getUser, User as UserType } from "../utils/userCR";
 import { useEffect, useState } from "react";

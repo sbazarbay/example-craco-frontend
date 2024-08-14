@@ -14,7 +14,6 @@ const AuthContext = createContext<{
 
 export default function AuthProvider({
   children,
-  isSignedIn,
 }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
 

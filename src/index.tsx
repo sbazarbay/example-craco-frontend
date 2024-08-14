@@ -37,7 +37,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AuthProvider isSignedIn={false}>
+    <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
