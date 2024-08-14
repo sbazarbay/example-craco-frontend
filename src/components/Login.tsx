@@ -5,7 +5,7 @@ import { createUser, getUserByUsername, User } from "../utils/userCR";
 import { useAuth } from "./AuthProvider";
 import { useEffect } from "react";
 
-export async function action({ request }: { request: Request; params: any }) {
+export async function action({ request }: { request: Request }) {
   const formData = await (request.formData() as any);
   const { username, password } = Object.fromEntries(formData);
   let user = null;
