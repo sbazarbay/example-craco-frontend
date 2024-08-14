@@ -1,7 +1,7 @@
 import { createContext, PropsWithChildren, useContext, useState } from "react";
 import React from "react";
 
-type User = { id: number } | null;
+type User = { id: string } | null;
 
 type AuthProviderProps = PropsWithChildren & {
   isSignedIn?: boolean;
@@ -10,7 +10,7 @@ type AuthProviderProps = PropsWithChildren & {
 const AuthContext = createContext<{
   user: User;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
-}>({ user: { id: 0 }, setUser: () => {} });
+}>({ user: { id: "" }, setUser: () => {} });
 
 export default function AuthProvider({
   children,

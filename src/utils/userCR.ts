@@ -3,7 +3,7 @@ import localforage from "localforage";
 import { matchSorter } from "match-sorter";
 import { sortBy } from "sort-by-typescript";
 
-type User = {
+export type User = {
   id: string;
   username: string;
   email: string;
@@ -33,9 +33,16 @@ export async function createUser(username: string, password: string) {
 
 // READ
 export async function getUser(id: string) {
-  await fakeNetwork(`user:${id}`);
+  await fakeNetwork(`userById:${id}`);
   let users: User[] | null = await localforage.getItem("users");
-  let user = users!.find((user: User) => user.id === id);
+  let user = users?.find((user: User) => user.id === id);
+  return user ?? null;
+}
+
+export async function getUserByUsername(username: string) {
+  await fakeNetwork(`userByUsername:${username}`);
+  let users: User[] | null = await localforage.getItem("users");
+  let user = users?.find((user: User) => user.username === username);
   return user ?? null;
 }
 
