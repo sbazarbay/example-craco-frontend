@@ -19,6 +19,7 @@ export async function action({ request }: { request: Request }) {
 }
 
 // For demo purposes (to show simple "JWT" based auth), will use Login component for both Login/Signup functionality, instead of creating another component for Signup. Also will use user.id instead of a real JWT token
+// TODO: implement form validation
 export default function Login() {
   const { setUser } = useAuth();
   const actionData: { user: User } = useActionData() as any;
